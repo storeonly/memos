@@ -1,0 +1,29 @@
+@import "./mixin.less";
+
+.menu-btns-popup {
+  .flex(column, flex-start, flex-start);
+  @apply absolute mt-1 ml-24 p-1 w-44 rounded-lg z-10 shadow bg-white;
+
+  &:hover {
+    display: flex;
+  }
+
+  > .btn {
+    .flex(row, flex-start, center);
+    @apply w-full py-2 px-3 text-sm rounded text-left;
+
+    > .icon {
+      @apply block w-6 text-center mr-2 text-sm;
+    }
+
+    &:hover {
+      background-color: @bg-whitegray;
+    }
+  }
+}
+
+@media only screen and (max-width: 875px) {
+  .menu-btns-popup {
+    @apply ml-16;
+  }
+}

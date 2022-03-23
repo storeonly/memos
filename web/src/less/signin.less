@@ -1,0 +1,107 @@
+@import "./mixin.less";
+
+.page-wrapper.signin {
+  .flex(row, center, center);
+  @apply w-full h-full bg-white;
+
+  > .page-container {
+    @apply w-80 max-w-full p-4 -mt-16;
+
+    > .page-header-container {
+      .flex(row, space-between, center);
+      @apply w-full mb-4;
+
+      > .title-text {
+        @apply text-2xl;
+      }
+    }
+
+    > .page-content-container {
+      .flex(column, flex-start, flex-start);
+      @apply flex-nowrap;
+
+      > .form-item-container {
+        .flex(column, flex-start, flex-start);
+        @apply relative w-full text-base m-2;
+
+        > .normal-text {
+          @apply absolute top-3 left-3 pl-1 leading-10 flex-shrink-0 text-base cursor-text text-gray-400 bg-transparent transition-all select-none;
+
+          &.not-null {
+            @apply text-sm top-0 leading-4 bg-white;
+          }
+        }
+
+        &.input-form-container {
+          @apply py-2;
+
+          > input {
+            @apply w-full py-3 px-3 text-base rounded-lg border border-solid border-gray-400;
+          }
+
+          &:hover {
+            @apply opacity-80;
+          }
+        }
+      }
+    }
+
+    > .page-footer-container {
+      .flex(row, space-between, center);
+      @apply w-full mt-3;
+
+      > .btns-container {
+        .flex(row, flex-start, center);
+
+        > .btn {
+          @apply px-1 py-2 text-sm rounded;
+
+          &:hover {
+            @apply opacity-80;
+          }
+
+          &.disabled {
+            @apply text-gray-400 cursor-not-allowed;
+          }
+
+          &.signin-btn {
+            @apply bg-green-600 text-white px-3;
+
+            &.requesting {
+              @apply cursor-wait opacity-80;
+            }
+          }
+        }
+
+        > .btn-text {
+          @apply text-sm;
+        }
+
+        > .split-text {
+          @apply text-gray-400 mx-2;
+        }
+      }
+    }
+
+    > .quickly-btns-container {
+      .flex(column, flex-start, flex-start);
+      @apply w-full mt-6;
+
+      > .btn {
+        @apply mb-6 text-base leading-10 border border-solid border-gray-400 px-4 rounded-3xl;
+
+        &:hover {
+          @apply opacity-80;
+        }
+
+        &.guest-signin {
+          @apply text-green-600 border-2 border-green-600 font-bold;
+        }
+
+        &.requesting {
+          @apply cursor-wait opacity-80;
+        }
+      }
+    }
+  }
+}
