@@ -30,4 +30,4 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/memos:next
+          tags: ${{ secrets.DOCKER_USERNAME }}/memos:mobile
